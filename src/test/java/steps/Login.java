@@ -31,7 +31,7 @@ public class Login{
 		driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
 		Thread.sleep(2000);
 		driver.manage().window().maximize();
-		throw new io.cucumber.java.PendingException();
+		
 	}
 
 	@Given("User is in login page")
@@ -43,7 +43,7 @@ public class Login{
 			System.out.println("Title Matched");
 		else
 			System.out.println("Title didn't match");
-	    throw new io.cucumber.java.PendingException();
+	    
 	}
 
 	@When("User enters valid username and password")
@@ -53,14 +53,14 @@ public class Login{
 		   username.sendKeys("Admin");
 		   WebElement password=driver.findElement(By.xpath("//input[@name='password']"));
 		   password.sendKeys("admin123");
-	    throw new io.cucumber.java.PendingException();
+	    
 	}
 
 	@When("Click Submit Button")
 	public void click_submit_button() {
 		WebElement loginButton=driver.findElement(By.xpath("//*[text()=' Login ']"));
 		 loginButton.click();
-	    throw new io.cucumber.java.PendingException();
+	    
 	}
 
 	@When("User clicks Admin options")
@@ -68,7 +68,7 @@ public class Login{
 	   
 		WebElement adminButton=driver.findElement(By.xpath("//span[text()='Admin']"));
 		 adminButton.click();
-	    throw new io.cucumber.java.PendingException();
+	    
 	}
 
 	@When("Click Job Nav link")
@@ -78,7 +78,7 @@ public class Login{
 		 jobButton.click();
 		 WebElement jobTitleButton=driver.findElement(By.xpath("//a[text()='Job Titles']"));
 		 jobTitleButton.click();
-	    throw new io.cucumber.java.PendingException();
+	    
 	}
 
 	@Then("User clicks on QA Engineer")
@@ -89,7 +89,7 @@ public class Login{
 		{
 			qaEngineerCheckBox.click();
 		}
-	    throw new io.cucumber.java.PendingException();
+	    
 	}
 	
 	@Given("User sets request Header")
@@ -104,7 +104,7 @@ public class Login{
 	    requestParams.put("name", "Venu1");
 	    requestParams.put("job", "AutomationQA");
 	    request.header("Content-Type","application/json");
-	    throw new io.cucumber.java.PendingException();
+	    
 		
 		
 	}
@@ -133,7 +133,7 @@ public class Login{
 		 response = request.get(getUrl+id);
 		 System.out.println(response.getBody().asPrettyString());
 		 
-	    throw new io.cucumber.java.PendingException();
+	    
 	}
 
 }
